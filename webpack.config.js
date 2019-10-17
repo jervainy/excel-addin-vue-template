@@ -49,14 +49,10 @@ module.exports = async (env, options) => {
                 },
                 {
                     test: /\.(png|jpg|jpeg|gif)?$/,
-                    use: 'url-loader',
+                    loader: 'url-loader',
                     options: {
                         limit: 8192
                     }
-                },
-                {
-                    test: /\.(png|jpg|jpeg|gif)$/,
-                    use: "file-loader"
                 }
             ]
         },
