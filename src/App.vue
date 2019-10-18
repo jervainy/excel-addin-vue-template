@@ -1,5 +1,8 @@
 <template>
-    <div>This is a demo.</div>
+    <div>
+        This is a demo.
+        <a>HaHa</a>
+    </div>
 </template>
 
 <script>
@@ -11,6 +14,17 @@
     }
 </script>
 
-<style scoped>
+<!--<style scoped>-->
+<!--div {-->
+<!--    margin: 0;-->
+<!--}-->
+<!--</style>-->
 
+<style scoped lang="less">
+div {
+    margin: 0;
+    a {
+        color: cornflowerblue;
+    }
+}
 </style>

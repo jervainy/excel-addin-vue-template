@@ -12,10 +12,11 @@
     "dev-server-port": 3000
   },
   "scripts": {
-    "build": "webpack -p --mode production --https false",
-    "build:dev": "webpack --mode development --https false",
-    "build-dev": "webpack --mode development --https false && echo . && echo . && echo . && echo Please use 'build:dev' instead of 'build-dev'.",
-    "dev-server": "webpack-dev-server --mode development",
+    "build": "webpack -p --mode production --config webpack.prod.js --https false",
+    "build:dev": "webpack --mode development --config webpack.dev.js --https false",
+    "build-dev": "webpack --mode development --config webpack.dev.js --https false && echo . && echo . && echo . && echo Please use 'build:dev' instead of 'build-dev'.",
+    "dev-server": "webpack-dev-server --mode development --config webpack.dev.js",
+    "server": "node server.js",
     "lint": "office-addin-lint check",
     "lint:fix": "office-addin-lint fix",
     "prettier": "office-addin-lint prettier",
@@ -27,8 +28,11 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
     "vue": "^2.6.10",
-    "vue-loader": "^15.7.1"
+    "vue-loader": "^15.7.1",
+    "webpack-dev-middleware": "^3.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
@@ -39,16 +43,22 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
     "eslint-config-office-addins": "^1.0.10",
     "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
     "office-addin-cli": "^1.0.3",
     "office-addin-debugging": "^3.0.17",
     "office-addin-dev-certs": "^1.4.10",
     "office-addin-lint": "^1.0.13",
     "office-addin-manifest": "^1.4.12",
     "office-addin-prettier-config": "^1.0.10",
+    "sass-loader": "^8.0.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.1.0",
     "typescript": "^3.6.3",
@@ -56,7 +66,8 @@
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2"
   },
   "prettier": "office-addin-prettier-config"
 }
